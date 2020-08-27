@@ -20,20 +20,23 @@
             <div class="flex-column">
                 <label for="picked-color">Selected Color: </label>
                 <div>
-                    <input id="picked-color" name="picked-color" type="text" placeholder="Hexadecimal..">
+                    <input id="picked-color" name="picked-color" type="text" placeholder="Hexadecimal.."
+                        value="#ffffff">
                     <input id="picked-color-display" name="picked-color-display" type="color" value="#ffffff">
                 </div>
             </div>
             <div class="flex-column">
                 <label for="desired-color">Desired Color:</label>
                 <div>
-                    <input id="desired-color" type="text" class="desired-color" placeholder="Hexadecimal..">
+                    <input id="desired-color" type="text" class="desired-color" placeholder="Hexadecimal.."
+                        value="#ffffff">
                     <input id="desired-color-display" name="desired-color-display" type="color" value="#ffffff">
                 </div>
             </div>
             <div>
                 <button id="convert-button" class="button">Convert</button>
                 <button id="revert-button" class="button">Revert</button>
+                <a id="download-link" href="#" class="button">Download</a>
             </div>
         </div>
         <canvas id="canvas"></canvas>

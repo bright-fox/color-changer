@@ -7,6 +7,7 @@
     const desiredColorDisplay = document.getElementById("desired-color-display")
     const convertButton = document.getElementById("convert-button")
     const revertButton = document.getElementById("revert-button")
+    const downloadLink = document.getElementById("download-link")
 
     // canvas and image variables
     const canvas = document.querySelector("#canvas")
@@ -62,11 +63,6 @@
         const hexColor = rgbToHex(red, green, blue)
         pickedColor.value = hexColor
         pickedColorDisplay.value = hexColor
-
-        // console.log("Index", index)
-        // console.log("Pixel Values", imgData.data[index], imgData.data[index + 1], imgData.data[index + 2])
-        // console.log("Mouse Position", e.offsetX, e.offsetY)
-        // console.log("Data length", imgData.data.length)
     })
 
     // desired color
@@ -80,7 +76,7 @@
 
     // convert button
     convertButton.onclick = () => {
-        if (isHex(pickedColor.value) && isHex(desiredColor.value)) {
+        if (imageLoaded && isHex(pickedColor.value) && isHex(desiredColor.value)) {
             const pickedRGB = hextoRGB(pickedColor.value)
             const desiredRGB = hextoRGB(desiredColor.value)
             for (let i = 0; i < imgData.data.length; i += 4) {
@@ -102,10 +98,19 @@
 
     // revert button
     revertButton.onclick = () => {
+        if (!imageLoaded) return
         for (let i = 0; i < imgData.data.length; i++) {
             imgData.data[i] = originalPixels[i]
         }
         ctx.putImageData(imgData, 0, 0)
+    }
+
+    // download link
+    downloadLink.onclick = () => {
+        if (!imageLoaded) return
+        const dataURL = canvas.toDataURL("image/png")
+        downloadLink.href = dataURL
+        downloadLink.download = "download.png"
     }
 
     // helper functions
