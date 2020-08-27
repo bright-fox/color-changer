@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>color changer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="flex-column">
+                <label for="input-file">Select an image:</label>
+                <input id="input-file" name="input-file" type="file" accept="image/*">
+            </div>
+            <div class="flex-column">
+                <label for="picked-color">Selected Color: </label>
+                <div>
+                    <input id="picked-color" name="picked-color" type="text" placeholder="Hexadecimal..">
+                    <input id="picked-color-display" name="picked-color-display" type="color" value="#ffffff">
+                </div>
+            </div>
+            <div class="flex-column">
+                <label for="desired-color">Desired Color:</label>
+                <div>
+                    <input id="desired-color" type="text" class="desired-color" placeholder="Hexadecimal..">
+                    <input id="desired-color-display" name="desired-color-display" type="color" value="#ffffff">
+                </div>
+            </div>
+            <div>
+                <button class="button">Convert</button>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+</body>
+
+</html>
