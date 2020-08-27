@@ -23,9 +23,13 @@
 }
 
 .controls > * {
-    padding: 20px; 
+    padding: 15px; 
     border: 1px solid lightgray;
     border-collapse: collapse;
+}
+
+.controls > *:last-child {
+    border-bottom: none;
 }
 
 .flex-column {
@@ -44,4 +48,8 @@
 canvas {
     max-width: 60%;
     max-height: 100%;
+}
+
+.button {
+    padding: 5px;
 }
