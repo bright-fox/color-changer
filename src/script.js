@@ -40,6 +40,7 @@
         ctx.drawImage(srcImage, 0, 0, srcImage.width, srcImage.height)
         imgData = ctx.getImageData(0, 0, srcImage.width, srcImage.height)
         originalPixels = imgData.data.slice()
+        console.log(fileInput)
     }
 
     // picked color
@@ -140,14 +141,4 @@
             parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)
         ] : null
     }
-
-
-    // image.addEventListener("click", e => {
-    //     if (!imageLoaded) return
-
-    //     const pixel = canvas.getContext("2d").getImageData(e.offsetX, e.offsetY, 1, 1).data
-    //     console.log(pixel)
-    //     canvas.getContext("2d").fillStyle = "#FFF"
-    //     canvas.getContext("2d").fillRect(e.offsetX, e.offSetY, 1, 1)
-    // })
 })()
