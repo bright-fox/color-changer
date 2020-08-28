@@ -40,7 +40,6 @@
         ctx.drawImage(srcImage, 0, 0, srcImage.width, srcImage.height)
         imgData = ctx.getImageData(0, 0, srcImage.width, srcImage.height)
         originalPixels = imgData.data.slice()
-        console.log(fileInput)
     }
 
     // picked color
